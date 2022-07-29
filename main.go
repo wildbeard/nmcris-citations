@@ -50,7 +50,9 @@ func main() {
 			}
 			switch j {
 			case 0:
-				lineData = append(lineData, strings.Trim(field, " "))
+				l := strings.ReplaceAll(field, "\n", " ")
+				l = strings.Trim(l, " ")
+				lineData = append(lineData, l)
 			case 2:
 				lName := strings.Split(field, ",")[0]
 				if strings.Index(field, "And") != -1 {
